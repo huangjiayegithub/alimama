@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/alimama?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+
+mybatis:
+  # 扫描 mapper.xml
+  mapper-locations: classpath*:com/gq/modules/transportPrice/dao/mapping/*.xml
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

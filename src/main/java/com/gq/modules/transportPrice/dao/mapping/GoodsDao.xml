@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gq.modules.transportPrice.dao.GoodsDao">
+    
+    <resultMap type="com.gq.modules.transportPrice.entity.Goods" id="GoodsMap">
+        <id column="id" property="id"/>
+        <result property="goodName" column="good_name" jdbcType="VARCHAR"/>
+        <result property="goodAttr" column="good_attr" jdbcType="VARCHAR"/>
+        <result property="goodModel" column="good_model" jdbcType="VARCHAR"/>
+        <result property="price" column="price" jdbcType="OTHER"/>
+        <result property="weight" column="weight" jdbcType="OTHER"/>
+        <result property="volume" column="volume" jdbcType="OTHER"/>
+        <result property="unit" column="unit" jdbcType="VARCHAR"/>
+        <result property="status" column="STATUS" jdbcType="OTHER"/>
+        <result property="createUserId" column="create_user_id" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="updateUserId" column="update_user_id" jdbcType="INTEGER"/>
+        <result property="comments" column="comments" jdbcType="VARCHAR"/>
+    </resultMap>
+
+     <!--通过实体作为筛选条件查询-->
+    <select id="queryPage" resultMap="GoodsMap">
+        select
+          id, good_name, good_attr, good_model, price, weight, volume, unit, STATUS, create_user_id, create_time, update_time, update_user_id, comments
+        from goods
+
+    </select>
+
+</mapper>
